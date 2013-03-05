@@ -83,7 +83,7 @@ class Hackathon_Logger_Model_Graylog2 extends Zend_Log_Writer_Abstract
 		try {
 			Mage::helper('hackathon_logger')->addEventMetadata($event);
 
-			$eofMessageFirstLine = strpos($event['message'], "\n");
+			$eofMessageFirstLine = strpos($event['message'], "\n", 1);
 			$shortMessage = (FALSE === $eofMessageFirstLine) ? $event['message'] :
 			substr($event['message'], 0, $eofMessageFirstLine);
 			
