@@ -21,9 +21,11 @@ class Hackathon_Logger_Model_ChromePhp extends Zend_Log_Writer_Abstract
         switch ($event['priority']) {
             case Zend_Log::INFO:
                 ChromePhp::info($event['message']);
+                break;
             case Zend_Log::NOTICE:
             case Zend_Log::WARN:
                 ChromePhp::warn($event['message']);
+                break;
             case Zend_Log::ALERT:
             case Zend_Log::ERR:
             case Zend_Log::CRIT:
